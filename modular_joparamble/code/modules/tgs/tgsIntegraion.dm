@@ -43,7 +43,7 @@
 
 	embed.fields = list(line, joinat)
 
-	send2chat(message, CONFIG_GET(string/chat_announce_new_game))
+	send2chat(message, "launches") //can't "CONFIG_GET" before mc start. Womp-womp
 
 /world/proc/SendTGSRoundEnd()
 	var/datum/tgs_message_content/message = new ("...Вот и сказочке конец.")
@@ -63,6 +63,6 @@
 
 	embed.fields = list(deaths, bloodspilled, triumphgained, triumphslost, pleasures, confessors, players)
 
-	send2chat(message, CONFIG_GET(string/chat_announce_new_game))
+	send2chat(message, "launches")
 
 #undef ROUNDWAITER
